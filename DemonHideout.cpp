@@ -30,21 +30,21 @@ DemonHideout::DemonHideout (const unsigned int max_battle, const unsigned int ma
     cout << "DemonHideout constructed" << endl;
 }
 
-double DemonHideout::GetGoldCost(const unsigned int battle_qty) {
+double DemonHideout::GetGoldCost(const unsigned int battle_qty) const {
     return battle_qty * gold_cost_per_battle;
 }
 
-unsigned int DemonHideout::GetManaCost(const unsigned int battle_qty) {
+unsigned int DemonHideout::GetManaCost(const unsigned int battle_qty) const {
     return battle_qty * mana_cost_per_battle;
 }
 
-unsigned int DemonHideout::GetNumBattlesRemaining() {
+unsigned int DemonHideout::GetNumBattlesRemaining() const {
     return num_battle_remaining;
 }
 
-bool DemonHideout::IsAbleToBattle(const unsigned int battle_qty, double budget, unsigned int mana) {
-    // Check if a Mage has sufficient gold and mana to 
-    if (battle_qty * gold_cost_per_battle <= budget && battle_qty * mana_cost_per_battle <= mana) {
+bool DemonHideout::IsAbleToBattle(const unsigned int battle_qty, double budget, unsigned int mana) const {
+    // Check if a Mage has sufficient gold and mana to battle
+    if (GetGoldCost(battle_qty) <= budget && GetManaCost(battle_qty) <= mana) {
         return true;
     }
     return false;
@@ -65,7 +65,7 @@ unsigned int DemonHideout::DemonBattle(const unsigned int battle_units) {
     }
 }
 
-unsigned int DemonHideout::GetExperiencePerBattle() {
+unsigned int DemonHideout::GetExperiencePerBattle() const {
     return experience_per_battle;
 }
 
@@ -80,14 +80,14 @@ bool DemonHideout::Update() {
     return false;
 }
 
-bool DemonHideout::passed() {
+bool DemonHideout::passed() const {
     if (num_battle_remaining == 0) {
         return true;
     }
     return false;
 }
 
-void DemonHideout::ShowStatus() {
+void DemonHideout::ShowStatus() const {
     cout << "DemonHideout Status: " << endl;
     Building::ShowStatus();
     cout << "Max number of battles: " << max_number_of_battles << endl;

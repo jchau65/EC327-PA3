@@ -26,7 +26,7 @@ ManaSpire::ManaSpire(const int in_id, const double crystal_cost, const unsigned 
     cout << "ManaSpire constructed" << endl;
 }
 
-bool ManaSpire::HasCrystals() {
+bool ManaSpire::HasCrystals() const {
     // Returns true if there is at least one crystal remaining
     if (this->num_crystals_remaining >= 1) {
         return true;
@@ -34,19 +34,19 @@ bool ManaSpire::HasCrystals() {
     return false;
 }
 
-unsigned int ManaSpire::GetNumCrystalsRemaining() {
+unsigned int ManaSpire::GetNumCrystalsRemaining() const {
     return num_crystals_remaining;
 }
 
-bool ManaSpire::CanAffordCrystal(unsigned int crystal, double budget) {
+bool ManaSpire::CanAffordCrystal(unsigned int crystal, double budget) const {
     // Returns true if the given budget can afford to buy specified number of crystals
-    if (budget >= crystal * this->cost_per_crystal) {
+    if (budget >= GetCrystalCost(crystal)) {
         return true;
     }
     return false;
 }
 
-double ManaSpire::GetCrystalCost(unsigned int crystal) {
+double ManaSpire::GetCrystalCost(unsigned int crystal) const {
     return crystal * cost_per_crystal;
 }
 
@@ -77,7 +77,7 @@ bool ManaSpire::Update() {
     return false;
 }
 
-void ManaSpire::ShowStatus() {
+void ManaSpire::ShowStatus() const {
     cout << "ManaSpire Status: " << endl; 
     Building::ShowStatus();
     cout << "Gold pieces per crystal: " << cost_per_crystal << endl;

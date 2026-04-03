@@ -46,12 +46,12 @@ class Building : public GameObject {
          * Prints "(display_code)(id) at (location)"
          * Prints "(mage_count) mage(s) is/are in this building"
          */
-        void ShowStatus();
+        void ShowStatus() const;
 
         /**
          * @brief Returns true because buildings are always visible.
          */
-        bool ShouldBeVisible();
+        bool ShouldBeVisible() const;
 };
 
 #endif

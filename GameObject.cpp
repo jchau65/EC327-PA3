@@ -11,18 +11,18 @@ GameObject::GameObject(const Point2D& in_loc, const int in_id, const char in_cod
     cout << "GameObject constructed" << endl; // Parameterized constructor
 }
 
-Point2D GameObject::GetLocation() {
+Point2D GameObject::GetLocation() const {
     return location;
 }
 
-int GameObject::GetId() {
+int GameObject::GetId() const {
     return id_num;
 }
 
-char GameObject::GetState() {
+char GameObject::GetState() const {
     return state;
 }
 
-void GameObject::ShowStatus() {
+void GameObject::ShowStatus() const {
     cout << display_code << id_num << " at " << location << endl;
 }

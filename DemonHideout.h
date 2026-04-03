@@ -58,19 +58,19 @@ class DemonHideout : public Building {
          * 
          * @return The gold cost of battling a specified number of times
          */
-        double GetGoldCost(const unsigned int battle_qty);
+        double GetGoldCost(const unsigned int battle_qty) const;
 
         /**
          * @param battle_qty Specified number of battles
          * 
          * @return The mana cost of battling a specified number of times
          */
-        unsigned int GetManaCost(const unsigned int battle_qty);
+        unsigned int GetManaCost(const unsigned int battle_qty) const;
 
         /**
          * @return The number of battles remaining in this DemonHideout.
          */
-        unsigned int GetNumBattlesRemaining();
+        unsigned int GetNumBattlesRemaining() const;
 
         /**
          * @param battle_qty Specified number of battles
@@ -79,7 +79,7 @@ class DemonHideout : public Building {
          * 
          * @return True if a Mage in a DemonHideout with a given budget and mana can request to take battle_qty battles. False otherwise.
          */
-        bool IsAbleToBattle(const unsigned int battle_qty, const double budget, const unsigned int mana); 
+        bool IsAbleToBattle(const unsigned int battle_qty, const double budget, const unsigned int mana) const; 
 
         /**
          * Subtracts battles from num_battles_remaiing if this DemonHideout has enough units. If the amount of
@@ -97,7 +97,7 @@ class DemonHideout : public Building {
         /**
          * @return The experience gained from each battle.
          */
-        unsigned int GetExperiencePerBattle();
+        unsigned int GetExperiencePerBattle() const;
 
         /**
          * If the DemonHideout has zero battles remaining, set the state to DEFEATED and display_code to 'd'.
@@ -110,7 +110,7 @@ class DemonHideout : public Building {
         /**
          * @return Whether battles remaining is 0
          */
-        bool passed();
+        bool passed() const;
 
         /**
          * Prints out the status of the object by calling GameObject's show status and then the values of its member variables:
@@ -122,7 +122,7 @@ class DemonHideout : public Building {
          * - "Experience per battle: (experience_per_battle)"
          * - "(num_battles_remaining) battle(s) are remaining for this DemonHideout"
          */
-        void ShowStatus();
+        void ShowStatus() const;
 };
 
 #endif

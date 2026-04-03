@@ -125,12 +125,12 @@ class Mage : public GameObject {
         /**
          * @return True if mana is 0
          */
-        bool IsKnockedOut();
+        bool IsKnockedOut() const;
 
         /**
          * @return True if this mage is not knocked out
          */
-        bool ShouldBeVisisble();
+        bool ShouldBeVisisble() const;
 
         /**
          * Prints "(name) status: "
@@ -146,7 +146,7 @@ class Mage : public GameObject {
          * - BATTLING_IN_HIDEOUT - "Battling in DemonHideout (current_hideout id)"
          * - RECOVERING_MANA - "Recovering mana in Mana Spire (current_spire id)"
          */
-        void ShowStatus();
+        void ShowStatus() const;
 
         /**
          * If the object is moving, this calls the UpdateLocation() function.

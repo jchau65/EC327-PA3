@@ -50,12 +50,12 @@ class ManaSpire : public Building {
         /**
          * @return Whether the ManaSpire has crystals or not
          */
-        bool HasCrystals();
+        bool HasCrystals() const; 
 
         /**
          * @return The number of crystals remaining in this ManaSpire.
          */
-        unsigned int GetNumCrystalsRemaining();
+        unsigned int GetNumCrystalsRemaining() const;
 
         /**
          * @param crystal Number of crystals to be purchased
@@ -63,14 +63,14 @@ class ManaSpire : public Building {
          * 
          * @return True if this Mage can afford to purchase crystal with the given budget. Otherwise, false.
          */
-        bool CanAffordCrystal(const unsigned int crystal, const double budget);
+        bool CanAffordCrystal(const unsigned int crystal, const double budget) const;
 
         /**
          * @param crystal Number of crystals specified
          * 
          * @return The cost (in gold pieces) for the specified number of crystals.
          */
-        double GetCrystalCost(const unsigned int crystal);
+        double GetCrystalCost(const unsigned int crystal) const;
 
         /**
          * @brief 
@@ -102,7 +102,7 @@ class ManaSpire : public Building {
          * - "Gold pieces per crystal: (cost_per_crystal)"
          * - "has (crystal_remaining) crystal(s) remaining"
          */
-        void ShowStatus();
+        void ShowStatus() const;
 };
 
 #endif

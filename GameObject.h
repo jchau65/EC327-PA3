@@ -42,28 +42,28 @@ class GameObject {
          * 
          * @return Point2D object representing the location of this object
          */
-        Point2D GetLocation();
+        Point2D GetLocation() const;
 
         /**
          * @brief Returns the ID number for this object.
          * 
          * @return ID number
          */
-        int GetId();
+        int GetId() const;
 
         /**
          * @brief Returns the state for this object.
          * 
          * @return Int representing the state of this object.
          */
-        char GetState();
+        char GetState() const;
 
         /**
          * @brief
          * Outputs the information contained in this class: display_code, id_num, location, 
          * in the format "{display_code}{id_num} at {location}".
          */
-        void ShowStatus();
+        void ShowStatus() const;
 };
 
 #endif

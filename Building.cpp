@@ -20,7 +20,7 @@ void Building::RemoveOneMage() {
     mage_count--;
 }
 
-void Building::ShowStatus() {
+void Building::ShowStatus() const {
     GameObject::ShowStatus(); // Print out "(display_code)(id) located at (location)"
 
     // Conditionally select verbs is/are based on number of mages
@@ -32,6 +32,6 @@ void Building::ShowStatus() {
     }
 }
 
-bool Building::ShouldBeVisible() {
+bool Building::ShouldBeVisible() const {
     return true;
 }
