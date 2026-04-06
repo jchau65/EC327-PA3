@@ -292,6 +292,7 @@ bool Mage::Update() {
             // Checks if the mage has arrived
             if (UpdateLocation()) {
                 state = IN_HIDEOUT;
+                is_in_hideout = true;
                 current_hideout->AddOneMage();
                 return true;
             }
@@ -302,6 +303,7 @@ bool Mage::Update() {
             // Checks if the mage has arrived
             if (UpdateLocation()) {
                 state = AT_SPIRE;
+                is_at_spire = true;
                 current_spire->AddOneMage();
                 return true;
             }
@@ -323,13 +325,15 @@ bool Mage::Update() {
             // Reduce gold
             gold_pieces -= current_hideout->GetGoldCost(battles_to_buy);
 
-            // Increase experience
-            unsigned int experienceGain = current_hideout->GetExperiencePerBattle() * battles_to_buy;
-            experience += experienceGain;
+            // Increase experience (have to wrap the code in brackets to avoid jump to case label error)
+            {
+                unsigned int experienceGain = current_hideout->GetExperiencePerBattle() * battles_to_buy;
+                experience += experienceGain;
 
-            // Print out experience gain and battles completed
-            cout << name << " completed " << battles_to_buy << " battle(s)!" << endl;
-            cout << name << " gained " << experienceGain << " experience!" << endl;
+                // Print out experience gain and battles completed
+                cout << name << " completed " << battles_to_buy << " battle(s)!" << endl;
+                cout << name << " gained " << experienceGain << " experience!" << endl;
+            }
 
             // Set state to IN_HIDEOUT and return true
             state = IN_HIDEOUT;
@@ -362,8 +366,8 @@ bool Mage::UpdateLocation() {
         gold_pieces += GetRandomAmountOfGP();
 
         // If location is within one step of location
-        if (fabs((destination - location).x) <= delta.x && 
-            fabs((destination - location).y) <= delta.y) 
+        if (fabs((destination - location).x) <= fabs(delta.x) && 
+            fabs((destination - location).y) <= fabs(delta.y)) 
         {
             location = destination;
             cout << display_code << id_num << ": Arrived at destination." << endl;
