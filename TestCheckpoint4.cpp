@@ -9,6 +9,8 @@ int main() {
     char input;
 
     while (input != 'q') {
-        HandleCommand(model, view, input);
+        cout << "Enter command: ";
+        cin >> input;
+        HandleCommand(*model, *view, input);
     }
 }

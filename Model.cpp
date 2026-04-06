@@ -113,6 +113,8 @@ bool Model::Update() {
 
     // Print game over win condition
     if (gameOverMages) cout << "GAME OVER: You lose! All of your Mages' mana is lost!" << endl;
+
+    return returnedTrue;
 }
 
 void Display(View& view) {

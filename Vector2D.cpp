@@ -6,7 +6,7 @@ using namespace std;
 
 Vector2D::Vector2D() : x(0), y(0) {}
 
-Vector2D::Vector2D(const double in_x, const double in_y) : x(in_y), y(in_y) {}
+Vector2D::Vector2D(const double in_x, const double in_y) : x(in_x), y(in_y) {}
 
 Vector2D operator*(const Vector2D& vector, const double mult) {
     // Return a new Vector2D with the multiplied x and y

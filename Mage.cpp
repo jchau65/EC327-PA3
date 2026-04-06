@@ -406,7 +406,7 @@ void Mage::SetupDestination(const Point2D& dest) {
 
     // Calculate each "step"
     if (GetDistanceBetween(destination, location) != 0) {
-        delta = (destination - location) * (speed / GetDistanceBetween(destination, location));
+        delta = (destination - location) * ((double) speed / GetDistanceBetween(destination, location));
     }
 
     else {
