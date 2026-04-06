@@ -10,7 +10,7 @@ using namespace std;
 enum MageStates {
     STOPPED = 0,
     MOVING = 1,
-    KNOCKING_OUT = 2,
+    KNOCKED_OUT = 2,
     AT_SPIRE = 3,
     IN_HIDEOUT = 4,
     MOVING_TO_SPIRE = 5,
@@ -79,7 +79,7 @@ class Mage : public GameObject {
          * - Prints the message "(display_code)(id): On my way to hideout (hideout id)."
          * - If this Mage is already there print "(display_code)(id): I am already at the Demon Hideout!"
          */
-        void StartMovingToHideout(const DemonHideout* hideout);
+        void StartMovingToHideout(DemonHideout* hideout);
 
         /**
          * - Tells the Mage to start moving to a ManaSpire.
@@ -89,7 +89,7 @@ class Mage : public GameObject {
          * - Prints the message "(display_code)(id): On my way to Spire (spire id)"
          * - If Mage is already there print "(display_code)(id): I am already at the Spire!"
          */
-        void StartMovingToSpire(const ManaSpire* spire);
+        void StartMovingToSpire(ManaSpire* spire);
 
         /**
          * Tells the Mage to start battling (num_battles) in a DemonHideout.
@@ -130,7 +130,7 @@ class Mage : public GameObject {
         /**
          * @return True if this mage is not knocked out
          */
-        bool ShouldBeVisisble() const;
+        bool ShouldBeVisible() const;
 
         /**
          * Prints "(name) status: "

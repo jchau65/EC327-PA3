@@ -27,7 +27,7 @@ Point2D operator+ (const Point2D& point, const Vector2D& vector) {
     return Point2D(point.x + vector.x, point.y + vector.y);
 }
 
-Point2D operator- (const Point2D& p1, const Point2D& p2) {
+Vector2D operator- (const Point2D& p1, const Point2D& p2) {
     // Return a new point 2D with subtracted x and y values
-    return Point2D(p1.x - p2.x, p1.y - p2.y);
+    return Vector2D(p1.x - p2.x, p1.y - p2.y);
 }

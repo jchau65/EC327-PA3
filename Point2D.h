@@ -70,6 +70,6 @@ Point2D operator+(const Point2D& point, const Vector2D& vector);
  * 
  * @return Resulting Point2D object
  */
-Point2D operator-(const Point2D& p1, const Point2D& p2);
+Vector2D operator-(const Point2D& p1, const Point2D& p2);
 
 #endif
