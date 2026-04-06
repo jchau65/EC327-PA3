@@ -1,3 +1,6 @@
+#ifndef MAGE_H
+#define MAGE_H
+
 #include <string>
 
 #include "GameObject.h"
@@ -130,7 +133,7 @@ class Mage : public GameObject {
         /**
          * @return True if this mage is not knocked out
          */
-        bool ShouldBeVisible() const;
+        bool ShouldBeVisible() const override;
 
         /**
          * Prints "(name) status: "
@@ -146,7 +149,7 @@ class Mage : public GameObject {
          * - BATTLING_IN_HIDEOUT - "Battling in DemonHideout (current_hideout id)"
          * - RECOVERING_MANA - "Recovering mana in Mana Spire (current_spire id)"
          */
-        void ShowStatus() const;
+        void ShowStatus() const override;
 
         /**
          * If the object is moving, this calls the UpdateLocation() function.
@@ -172,7 +175,12 @@ class Mage : public GameObject {
          * - BATTLING_IN_HIDEOUT - reduce Mana, gold pieces, increase Mage exp, print "** (name) completed (battles_to_buy) battle(s)! **" and "** (name) gained (experience gained) experience! **", set state to IN_HIDEOUT and return true
          * - RECOVERING_MANA - increase Mana, reduce gold pieces, prints "** (name) recovered (mana recovered) mana! **" and "** (name) bought (crystals_received) crystal(s)! **", set state to AT_SPIRE and return true
          */
-        bool Update();
+        bool Update() override;
+
+        /**
+         * Destructor for Mage. Outputs the message "Mage destructed."
+         */
+        virtual ~Mage();
 
     protected:
         /**
@@ -206,3 +214,5 @@ class Mage : public GameObject {
  * @return A random number between 0.0 and 2.0 inclusive.
  */
 double GetRandomAmountOfGP();
+
+#endif

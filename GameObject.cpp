@@ -26,3 +26,7 @@ char GameObject::GetState() const {
 void GameObject::ShowStatus() const {
     cout << display_code << id_num << " at " << location << endl;
 }
+
+GameObject::~GameObject() {
+    cout << "GameObject destructed" << endl;
+}

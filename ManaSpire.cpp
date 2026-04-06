@@ -83,3 +83,7 @@ void ManaSpire::ShowStatus() const {
     cout << "Gold pieces per crystal: " << cost_per_crystal << endl;
     cout << "Has " << num_crystals_remaining << " crystal(s) remaining." << endl;
 }
+
+ManaSpire::~ManaSpire() {
+    cout << "ManaSpire destructed." << endl;
+}

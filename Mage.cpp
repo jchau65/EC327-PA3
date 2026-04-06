@@ -358,6 +358,10 @@ bool Mage::Update() {
     return false;
 }
 
+Mage::~Mage() {
+    cout << "Mage destructed." << endl;
+}
+
 bool Mage::UpdateLocation() {
     // If mage has enough mana
     if (!IsKnockedOut()) {

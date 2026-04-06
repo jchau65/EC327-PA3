@@ -96,3 +96,7 @@ void DemonHideout::ShowStatus() const {
     cout << "Experience per battle: " << experience_per_battle << endl;
     cout << num_battle_remaining << " battle(s) are remaining for this DemonHideout" << endl;
 }
+
+DemonHideout::~DemonHideout() {
+    cout << "DemonHideout destructed." << endl;
+}

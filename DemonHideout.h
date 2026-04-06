@@ -105,7 +105,7 @@ class DemonHideout : public Building {
          * 
          * @return false if battles still remain within the DemonHideout.
          */
-        bool Update();
+        bool Update() override;
 
         /**
          * @return Whether battles remaining is 0
@@ -122,7 +122,12 @@ class DemonHideout : public Building {
          * - "Experience per battle: (experience_per_battle)"
          * - "(num_battles_remaining) battle(s) are remaining for this DemonHideout"
          */
-        void ShowStatus() const;
+        void ShowStatus() const override;
+
+        /**
+         * Destructor for DemonHideout. Outputs the message "DemonHideout destructed."
+         */
+        ~DemonHideout();
 };
 
 #endif

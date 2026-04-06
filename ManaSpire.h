@@ -103,6 +103,11 @@ class ManaSpire : public Building {
          * - "has (crystal_remaining) crystal(s) remaining"
          */
         void ShowStatus() const;
+
+        /**
+         * Destructor for ManaSpire. Outputs the message "ManaSpire destructed."
+         */
+        ~ManaSpire();
 };
 
 #endif

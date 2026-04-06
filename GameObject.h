@@ -63,7 +63,22 @@ class GameObject {
          * Outputs the information contained in this class: display_code, id_num, location, 
          * in the format "{display_code}{id_num} at {location}".
          */
-        void ShowStatus() const;
+        virtual void ShowStatus() const;
+
+        /**
+         * Base Update function for all GameObjects.
+         */
+        virtual bool Update() = 0;
+
+        /**
+         * Base ShouldBeVisible function for all GameObjects.
+         */
+        virtual bool ShouldBeVisible() const = 0;
+
+        /**
+         * Destructor for GameObject. Outputs "GameObject destructed."
+         */
+        virtual ~GameObject();
 };
 
 #endif
