@@ -358,6 +358,10 @@ bool Mage::Update() {
     return false;
 }
 
+string Mage::GetName() {
+    return name;
+}
+
 Mage::~Mage() {
     cout << "Mage destructed." << endl;
 }

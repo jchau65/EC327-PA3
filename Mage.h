@@ -178,6 +178,11 @@ class Mage : public GameObject {
         bool Update() override;
 
         /**
+         * Getter function for the Mage's name.
+         */
+        string GetName();
+
+        /**
          * Destructor for Mage. Outputs the message "Mage destructed."
          */
         virtual ~Mage();

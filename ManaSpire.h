@@ -93,7 +93,7 @@ class ManaSpire : public Building {
          * the ManaSpire has no crystal remaining. It should return true ONLY at the time when the ManaSpire
          * runs out of crystal, and return false for later Update() function calls.
          */
-        bool Update();
+        bool Update() override;
 
         /**
          * Prints out the status of the object:
@@ -102,7 +102,7 @@ class ManaSpire : public Building {
          * - "Gold pieces per crystal: (cost_per_crystal)"
          * - "has (crystal_remaining) crystal(s) remaining"
          */
-        void ShowStatus() const;
+        void ShowStatus() const override;
 
         /**
          * Destructor for ManaSpire. Outputs the message "ManaSpire destructed."
