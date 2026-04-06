@@ -33,10 +33,10 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
+                "TestCheckpoint2.cpp",
                 "Point2D.cpp",
                 "Vector2D.cpp",
                 "GameObject.cpp",
-                "TestCheckpoint2.cpp",
                 "Building.cpp",
                 "ManaSpire.cpp",
                 "DemonHideout.cpp",
