@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "Model.h"
+#include "View.h"
 
 using namespace std;
 
@@ -102,7 +103,10 @@ bool Model::Update() {
     }
 
     // Print game over loss condition
-    if (gameOverHideouts) cout << "GAME OVER! You win! All battles done!" << endl;
+    if (gameOverHideouts) {
+        cout << "GAME OVER! You win! All battles done!" << endl;
+        exit(0);
+    }
 
     // Checks for mages knocked out
     for (int i = 0; i < num_mages; i++) {
@@ -112,13 +116,25 @@ bool Model::Update() {
     }
 
     // Print game over win condition
-    if (gameOverMages) cout << "GAME OVER: You lose! All of your Mages' mana is lost!" << endl;
+    if (gameOverMages) {
+        cout << "GAME OVER: You lose! All of your Mages' mana is lost!" << endl;
+        exit(0);
+    }
 
     return returnedTrue;
 }
 
-void Display(View& view) {
-    cout << "fsdojoasfjasdfjoifsdasfdoajf" << endl;
+void Model::Display(View& view) {
+    // Clear view first
+    view.Clear();
+
+    // Draw every object
+    for (int i = 0; i < num_objects; i++) {
+        view.Plot(object_ptrs[i]);
+    }
+
+    // Display
+    view.Draw();
 }
 
 void Model::ShowStatus() {

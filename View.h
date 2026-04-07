@@ -1,7 +1,8 @@
 #ifndef VIEW_H
 #define VIEW_H
 
-#include "Model.h"
+#include "GameObject.h"
+#include "Point2d.h"
 
 const int view_maxsize = 20; // The maximum size of the grid array
 

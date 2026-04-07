@@ -30,3 +30,8 @@ void GameObject::ShowStatus() const {
 GameObject::~GameObject() {
     cout << "GameObject destructed" << endl;
 }
+
+void GameObject::DrawSelf(char* ptr) {
+    ptr[0] = display_code;
+    ptr[1] = '0' + id_num;
+}

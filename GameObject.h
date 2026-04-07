@@ -79,6 +79,8 @@ class GameObject {
          * Destructor for GameObject. Outputs "GameObject destructed."
          */
         virtual ~GameObject();
+
+        void DrawSelf(char* ptr);
 };
 
 #endif
